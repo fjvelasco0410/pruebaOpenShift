@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sat.donatarias.bean.SolicitudBean;
 import com.sat.donatarias.bean.TablaBusquedaAtenderSolicitudAbogadoBean;
 import com.sat.donatarias.bean.TipoSolicitudBean;
+import com.sat.donatarias.model.CtEstadoProcesal;
 import com.sat.donatarias.model.EstadoProcesal;
 import com.sat.donatarias.model.TipoSolicitud;
+import com.sat.donatarias.repository.CtEstadoProcesalRepository;
 import com.sat.donatarias.service.AtencionSolicitudesAbogadoService;
 import com.sat.donatarias.service.EstadoProcesalService;
 import com.sat.donatarias.service.TipoSolicitudService;
@@ -32,7 +34,7 @@ public class BandejaSeguimientoAsuntosController {
 	
 	@Autowired
 	AtencionSolicitudesAbogadoService atencionSolicitudesAbogadoService;
-	
+		
 	@GetMapping("/obtenListaTipoSolicitud")
 	public List<TipoSolicitud> obtenListaTipoSolicitud() {
 		List<TipoSolicitud> lstTipoSolicitud = tipoSolicitudService.obtenListaTipoSolicitud();
